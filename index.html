@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Saldo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Dashboard personale per bilancio, entrate, uscite e lavori potenziali.">
+    <title>Saldo</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="icon" href="assets/icon-192.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-nav">
+        <button class="brand-button is-active" type="button" data-view-target="home" aria-label="Torna alla home">
+          <span>S.</span>
+        </button>
+        <nav aria-label="Aree bilancio">
+          <button type="button" data-view-target="flow">Flusso</button>
+          <button type="button" data-view-target="work">Lavori</button>
+          <button type="button" data-view-target="recurring">Ricorrenti</button>
+        </nav>
+      </header>
+
+      <section class="view is-active" data-view="home" aria-labelledby="homeTitle">
+        <section class="invoice-board">
+          <div class="board-top">
+            <div>
+              <p>Bilancio personale</p>
+              <h1 id="homeTitle">Panoramica</h1>
+            </div>
+            <div class="board-meta">
+              <article>
+                <span>Conto</span>
+                <strong>Corrente</strong>
+              </article>
+              <article>
+                <span>Aggiornato</span>
+                <strong>27 luglio</strong>
+              </article>
+              <article>
+                <span>Stato</span>
+                <strong>Demo</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="amount-row">
+            <span>€</span>
+            <strong data-current-balance>1.666</strong>
+            <small>,00</small>
+          </div>
+
+          <div class="strip" aria-label="Riepilogo principale">
+            <article class="strip-card income">
+              <span>Entrate previste</span>
+              <strong data-total-income>€5.443</strong>
+            </article>
+            <article class="strip-card expense">
+              <span>Uscite previste</span>
+              <strong data-total-expenses>€1.850</strong>
+            </article>
+            <article class="strip-card net">
+              <span>Disponibile stimato</span>
+              <strong data-projected-available>€5.259</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="home-grid">
+          <article class="panel main-panel">
+            <div class="panel-head">
+              <div>
+                <span>Patrimonio</span>
+                <h2>Stime principali</h2>
+              </div>
+            </div>
+            <div id="forecastList" class="card-grid"></div>
+          </article>
+
+          <aside class="panel side-panel">
+            <div class="panel-head">
+              <div>
+                <span>Prossimi focus</span>
+                <h2>Da tenere d'occhio</h2>
+              </div>
+            </div>
+            <div class="focus-list">
+              <article>
+                <span>Fine estate</span>
+                <strong>circa €4.950</strong>
+                <p>Dopo settembre e patente.</p>
+              </article>
+              <article>
+                <span>Fine 2026</span>
+                <strong>circa €4.650</strong>
+                <p>Dopo Bari ottobre-dicembre.</p>
+              </article>
+            </div>
+          </aside>
+        </section>
+      </section>
+
+      <section class="view" data-view="flow" aria-labelledby="flowTitle">
+        <div class="view-title">
+          <button type="button" data-view-target="home">Home</button>
+          <div>
+            <p>Entrate, uscite, NASpI</p>
+            <h1 id="flowTitle">Flusso</h1>
+          </div>
+        </div>
+
+        <div class="split">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <span>Entrate</span>
+                <h2>Previste</h2>
+              </div>
+              <em data-total-income>€5.443</em>
+            </div>
+            <div id="incomeList" class="list"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <span>Uscite</span>
+                <h2>Da coprire</h2>
+              </div>
+              <em class="negative-text" data-total-expenses>€1.850</em>
+            </div>
+            <div id="expenseList" class="list"></div>
+          </section>
+        </div>
+
+        <section class="panel compact-panel">
+          <div class="panel-head">
+            <div>
+              <span>NASpI</span>
+              <h2>Scenari 2027</h2>
+            </div>
+          </div>
+          <div id="naspiList" class="pill-list"></div>
+        </section>
+      </section>
+
+      <section class="view" data-view="work" aria-labelledby="workTitle">
+        <div class="view-title">
+          <button type="button" data-view-target="home">Home</button>
+          <div>
+            <p>Opportunita extra</p>
+            <h1 id="workTitle">Lavori</h1>
+          </div>
+        </div>
+
+        <article class="range-card">
+          <span>Potenziale totale</span>
+          <strong data-project-range>€9.300 - €11.400</strong>
+          <p>Range minimo/massimo dei lavori ancora possibili.</p>
+        </article>
+
+        <section class="panel">
+          <div id="projectList" class="list large-list"></div>
+        </section>
+      </section>
+
+      <section class="view" data-view="recurring" aria-labelledby="recurringTitle">
+        <div class="view-title">
+          <button type="button" data-view-target="home">Home</button>
+          <div>
+            <p>Entrate mensili potenziali</p>
+            <h1 id="recurringTitle">Ricorrenti</h1>
+          </div>
+        </div>
+
+        <article class="range-card recurring">
+          <span>Manutenzione mensile</span>
+          <strong data-maintenance-month>€300 - €350</strong>
+          <p>Potenziale annuo: <b data-maintenance-year>€3.600 - €4.200</b></p>
+        </article>
+
+        <section class="panel">
+          <div id="maintenanceList" class="list large-list"></div>
+        </section>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Navigazione mobile">
+        <button class="is-active" type="button" data-view-target="home">Home</button>
+        <button type="button" data-view-target="flow">Flusso</button>
+        <button type="button" data-view-target="work">Lavori</button>
+        <button type="button" data-view-target="recurring">Ric.</button>
+      </nav>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("sw.js").catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
