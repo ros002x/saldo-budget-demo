@@ -393,10 +393,31 @@ h2 {
 
 .focus-list article {
   display: grid;
-  gap: 7px;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
   min-height: 104px;
   padding: 18px;
   border-radius: 24px;
+}
+
+.focus-token {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.focus-token svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #17140b;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .focus-list article:first-child {

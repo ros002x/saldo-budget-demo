@@ -19,6 +19,10 @@ const budget = {
     { title: "Fine 2026", detail: "Dopo Bari", amount: 4650, icon: "calendar" },
     { title: "Inizio 2027", detail: "Con NASpI", amount: 6000, icon: "target" }
   ],
+  watchlist: [
+    { title: "MacBook Air M5", detail: "Possibile acquisto", amount: 1250, icon: "laptop" },
+    { title: "Vestiti", detail: "Budget da tenere sotto controllo", amount: 600, icon: "shirt" }
+  ],
   naspi: [
     { title: "Minimo", amount: 1800, icon: "shield" },
     { title: "Realistico", amount: 2000, icon: "target" },
@@ -62,7 +66,9 @@ const icons = {
   burger: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11.2c.4-3 3.1-5 7-5s6.6 2 7 5Z"/><path d="M4.5 13h15"/><path d="M5.5 16.5h13"/><path d="M6.5 18.2h11"/><path d="M8.3 9.2h.1"/><path d="M12 8.4h.1"/><path d="M15.7 9.2h.1"/></svg>',
   utensils: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v6"/><path d="M4.8 4.5v6"/><path d="M9.2 4.5v6"/><path d="M4.8 10.5h4.4L7 13v6.5"/><path d="M16.5 4.5c2 1.6 2.8 4.8.8 7.6l-1 1.4v6"/><path d="M14.7 4.5v15"/></svg>',
   tattoo: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 19 2.2-6.2 6-6 4 4-6 6Z"/><path d="m13.2 6.8 1.8-1.8 4 4-1.8 1.8"/><path d="M7.2 12.8 11.2 17"/><path d="M5 19l4.2-1.8"/></svg>',
-  film: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5.5h14v13H5z"/><path d="M8 5.5v13"/><path d="M16 5.5v13"/><path d="M5 9h3"/><path d="M5 15h3"/><path d="M16 9h3"/><path d="M16 15h3"/></svg>'
+  film: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5.5h14v13H5z"/><path d="M8 5.5v13"/><path d="M16 5.5v13"/><path d="M5 9h3"/><path d="M5 15h3"/><path d="M16 9h3"/><path d="M16 15h3"/></svg>',
+  laptop: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 6.5h13v8h-13z"/><path d="M3.8 17.5h16.4l-1.4 2H5.2z"/><path d="M10 17.5h4"/></svg>',
+  shirt: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.2 12 7l3.5-1.8 3.8 2.4-2 3.2-1.8-.9v9.3h-7V9.9l-1.8.9-2-3.2z"/><path d="M10 5.8c.4 1 1.1 1.5 2 1.5s1.6-.5 2-1.5"/></svg>'
 };
 
 const totalIncome = budget.income.reduce((sum, item) => sum + item.amount, 0);
@@ -123,6 +129,28 @@ renderList("#forecastListSpese", budget.forecasts, { token: "blue" });
 renderList("#projectList", budget.projects, { token: "purple", tone: "income", range: true });
 renderList("#maintenanceList", budget.maintenance, { token: "orange", tone: "expense", range: true });
 renderList("#naspiList", budget.naspi, { token: "blue" });
+
+const renderFocus = () => {
+  const list = document.querySelector("#watchList");
+  if (!list) return;
+
+  list.innerHTML = budget.watchlist
+    .map(
+      (item) => `
+        <article>
+          <span class="focus-token">${icons[item.icon]}</span>
+          <div>
+            <span>${item.detail}</span>
+            <strong>circa ${formatEuro(item.amount)}</strong>
+            <p>${item.title}</p>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+};
+
+renderFocus();
 
 const navLinks = document.querySelectorAll("[data-view-target]");
 const views = document.querySelectorAll("[data-view]");
