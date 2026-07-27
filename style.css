@@ -667,6 +667,7 @@ h2 {
       linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 250, 240, 0.42)),
       var(--surface);
     box-shadow: var(--shadow);
+    overflow: hidden;
   }
 
   .board-top p,
@@ -677,7 +678,8 @@ h2 {
   }
 
   .amount-row strong {
-    font-size: clamp(50px, 16vw, 66px);
+    font-size: clamp(46px, 14.5vw, 60px);
+    letter-spacing: 0;
   }
 
   .amount-row span,
@@ -694,8 +696,10 @@ h2 {
   }
 
   .strip {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 10px;
+    width: 100%;
+    min-width: 0;
   }
 
   .strip-card {
@@ -703,6 +707,8 @@ h2 {
     grid-template-columns: 1fr;
     gap: 6px;
     min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .strip-card.net {
@@ -725,11 +731,15 @@ h2 {
   }
 
   .strip-card strong {
+    width: 100%;
+    min-width: 0;
     min-height: 40px;
     border-radius: 14px;
-    font-size: 14px;
+    font-size: 13px;
     justify-content: flex-start;
-    padding: 0 14px;
+    padding: 0 12px;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .strip-card span {
