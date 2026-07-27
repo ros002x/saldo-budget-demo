@@ -1,4 +1,4 @@
-const CACHE_NAME = "saldo-demo-v21";
+const CACHE_NAME = "saldo-demo-v22";
 const CORE_ASSETS = [
   "./",
   "index.html",

@@ -140,10 +140,10 @@ const renderFocus = () => {
         <article>
           <span class="focus-token">${icons[item.icon]}</span>
           <div>
-            <span>${item.detail}</span>
-            <strong>circa ${formatEuro(item.amount)}</strong>
-            <p>${item.title}</p>
+            <strong>${item.title}</strong>
+            <p>${item.detail}</p>
           </div>
+          <em>circa ${formatEuro(item.amount)}</em>
         </article>
       `
     )
