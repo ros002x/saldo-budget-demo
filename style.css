@@ -239,7 +239,7 @@ h2 {
 .home-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.36fr);
-  gap: 0;
+  gap: 22px;
   align-items: stretch;
 }
 
@@ -259,16 +259,14 @@ h2 {
   padding: 24px;
 }
 
-.main-panel {
-  min-height: 380px;
-  z-index: 2;
-}
-
+.main-panel,
 .side-panel {
-  min-height: 380px;
-  margin-left: -1px;
-  padding: 24px;
-  border-top-left-radius: 0;
+  min-height: 340px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .panel-head {
@@ -276,7 +274,7 @@ h2 {
   align-items: flex-start;
   justify-content: space-between;
   gap: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .panel-head em {
@@ -287,10 +285,20 @@ h2 {
   font-weight: 900;
 }
 
+.main-panel .panel-head,
+.side-panel .panel-head {
+  padding: 0 2px;
+}
+
+.main-panel .panel-head h2,
+.side-panel .panel-head h2 {
+  font-size: 26px;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
 
 .list {
@@ -314,11 +322,14 @@ h2 {
 
 .card-grid .list-row {
   align-content: space-between;
-  min-height: 138px;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.07);
+  min-height: 122px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.045)),
+    rgba(255, 255, 255, 0.035);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
 }
 
 .item-meta {
@@ -370,9 +381,9 @@ h2 {
 .focus-list article {
   display: grid;
   gap: 7px;
-  min-height: 112px;
-  padding: 16px;
-  border-radius: 22px;
+  min-height: 104px;
+  padding: 18px;
+  border-radius: 24px;
 }
 
 .focus-list article:first-child {
@@ -527,7 +538,7 @@ h2 {
 
   .side-panel {
     margin-left: 0;
-    border-top-left-radius: 30px;
+    border-top-left-radius: 0;
   }
 
   .card-grid {
@@ -588,6 +599,12 @@ h2 {
     min-height: 0;
     padding: 16px;
     border-radius: 24px;
+  }
+
+  .main-panel,
+  .side-panel {
+    padding: 0;
+    border-radius: 0;
   }
 
   .main-panel .list,
