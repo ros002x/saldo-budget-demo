@@ -100,7 +100,9 @@ const renderList = (selector, items, options = {}) => {
 
 renderList("#incomeList", budget.income, { token: "green", tone: "income" });
 renderList("#expenseList", budget.expenses, { token: "red", tone: "expense", negative: true });
+renderList("#expenseListSpese", budget.expenses, { token: "red", tone: "expense", negative: true });
 renderList("#forecastList", budget.forecasts, { token: "blue" });
+renderList("#forecastListSpese", budget.forecasts, { token: "blue" });
 renderList("#projectList", budget.projects, { token: "purple", tone: "income", range: true });
 renderList("#maintenanceList", budget.maintenance, { token: "orange", tone: "expense", range: true });
 renderList("#naspiList", budget.naspi, { token: "blue" });

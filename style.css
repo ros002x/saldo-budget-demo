@@ -46,10 +46,7 @@ button {
   min-height: 100vh;
   margin: 0 auto;
   padding: 28px 34px 36px;
-  background:
-    radial-gradient(circle at 18% 8%, rgba(106, 25, 98, 0.34), transparent 32%),
-    radial-gradient(circle at 90% 7%, rgba(27, 93, 178, 0.38), transparent 34%),
-    #000000;
+  background: #000000;
 }
 
 .app-nav {
@@ -120,6 +117,9 @@ button {
   gap: 24px 32px;
   min-height: 318px;
   padding: 34px 0 6px;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(106, 25, 98, 0.28), transparent 30%),
+    radial-gradient(circle at 90% 10%, rgba(27, 93, 178, 0.32), transparent 34%);
 }
 
 .board-top {
@@ -475,6 +475,18 @@ h2 {
     var(--panel);
 }
 
+.income-range {
+  background:
+    radial-gradient(circle at 90% 0%, rgba(99, 245, 141, 0.18), transparent 38%),
+    var(--panel);
+}
+
+.outgoing-range {
+  background:
+    radial-gradient(circle at 90% 0%, rgba(255, 118, 107, 0.18), transparent 38%),
+    var(--panel);
+}
+
 .bottom-nav {
   display: none;
 }
@@ -505,7 +517,10 @@ h2 {
   .invoice-board {
     grid-template-columns: 1fr;
     min-height: 0;
-    padding-top: 14px;
+    padding: 18px 0 4px;
+    background:
+      radial-gradient(circle at 18% 4%, rgba(106, 25, 98, 0.22), transparent 34%),
+      radial-gradient(circle at 96% 0%, rgba(27, 93, 178, 0.24), transparent 38%);
   }
 
   .board-meta {
@@ -526,7 +541,7 @@ h2 {
   }
 
   .strip-card {
-    grid-template-columns: 96px 1fr;
+    grid-template-columns: 112px 1fr;
     align-items: center;
     gap: 8px;
   }
@@ -551,7 +566,7 @@ h2 {
     bottom: max(10px, env(safe-area-inset-bottom));
     z-index: 30;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 4px;
     width: min(430px, calc(100% - 24px));
     min-height: 64px;
@@ -567,7 +582,8 @@ h2 {
   .bottom-nav button {
     border-radius: 18px;
     background: transparent;
-    font-size: 11px;
+    font-size: 10px;
+    padding: 0 2px;
   }
 
   .bottom-nav button.is-active {
@@ -577,8 +593,19 @@ h2 {
 }
 
 @media (max-width: 680px) {
+  .app {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .brand-button {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
   .amount-row strong {
-    font-size: clamp(58px, 18vw, 76px);
+    font-size: clamp(54px, 17vw, 72px);
   }
 
   .amount-row span,
@@ -587,7 +614,7 @@ h2 {
   }
 
   h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   h2 {
@@ -599,6 +626,30 @@ h2 {
     min-height: 0;
     padding: 16px;
     border-radius: 24px;
+  }
+
+  .board-meta {
+    display: none;
+  }
+
+  .strip-card strong {
+    min-height: 40px;
+    border-radius: 14px;
+    font-size: 14px;
+  }
+
+  .strip-card span {
+    font-size: 12px;
+  }
+
+  .card-grid .list-row {
+    min-height: 92px;
+    padding: 14px;
+  }
+
+  .focus-list article {
+    min-height: 92px;
+    padding: 14px;
   }
 
   .main-panel,

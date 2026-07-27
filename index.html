@@ -21,9 +21,10 @@
           <span>S.</span>
         </button>
         <nav aria-label="Aree bilancio">
-          <button type="button" data-view-target="flow">Flusso</button>
-          <button type="button" data-view-target="work">Lavori</button>
-          <button type="button" data-view-target="recurring">Ricorrenti</button>
+          <button type="button" data-view-target="income">Entrate</button>
+          <button type="button" data-view-target="outgoing">Uscite</button>
+          <button type="button" data-view-target="web">Lavori Web</button>
+          <button type="button" data-view-target="spese">Spese</button>
         </nav>
       </header>
 
@@ -106,17 +107,22 @@
         </section>
       </section>
 
-      <section class="view" data-view="flow" aria-labelledby="flowTitle">
+      <section class="view" data-view="income" aria-labelledby="incomeTitle">
         <div class="view-title">
           <button type="button" data-view-target="home">Home</button>
           <div>
-            <p>Entrate, uscite, NASpI</p>
-            <h1 id="flowTitle">Flusso</h1>
+            <p>Stipendi, rimborsi e crediti</p>
+            <h1 id="incomeTitle">Entrate</h1>
           </div>
         </div>
 
-        <div class="split">
-          <section class="panel">
+        <article class="range-card income-range">
+          <span>Totale entrate previste</span>
+          <strong data-total-income>€5.443</strong>
+          <p>Somma di stipendi, rimborsi, TFR e 730.</p>
+        </article>
+
+        <section class="panel">
             <div class="panel-head">
               <div>
                 <span>Entrate</span>
@@ -125,9 +131,25 @@
               <em data-total-income>€5.443</em>
             </div>
             <div id="incomeList" class="list"></div>
-          </section>
+        </section>
+      </section>
 
-          <section class="panel">
+      <section class="view" data-view="outgoing" aria-labelledby="outgoingTitle">
+        <div class="view-title">
+          <button type="button" data-view-target="home">Home</button>
+          <div>
+            <p>Pagamenti gia previsti</p>
+            <h1 id="outgoingTitle">Uscite</h1>
+          </div>
+        </div>
+
+        <article class="range-card outgoing-range">
+          <span>Totale uscite previste</span>
+          <strong data-total-expenses>€1.850</strong>
+          <p>Patente e periodo Bari ottobre-dicembre.</p>
+        </article>
+
+        <section class="panel">
             <div class="panel-head">
               <div>
                 <span>Uscite</span>
@@ -136,8 +158,38 @@
               <em class="negative-text" data-total-expenses>€1.850</em>
             </div>
             <div id="expenseList" class="list"></div>
-          </section>
+        </section>
+      </section>
+
+      <section class="view" data-view="spese" aria-labelledby="speseTitle">
+        <div class="view-title">
+          <button type="button" data-view-target="home">Home</button>
+          <div>
+            <p>Spese e impatto sul patrimonio</p>
+            <h1 id="speseTitle">Spese</h1>
+          </div>
         </div>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <span>Spese previste</span>
+              <h2>Patente e Bari</h2>
+            </div>
+            <em class="negative-text" data-total-expenses>€1.850</em>
+          </div>
+          <div id="expenseListSpese" class="list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <span>Patrimonio</span>
+              <h2>Dopo le spese principali</h2>
+            </div>
+          </div>
+          <div id="forecastListSpese" class="list"></div>
+        </section>
 
         <section class="panel compact-panel">
           <div class="panel-head">
@@ -150,12 +202,12 @@
         </section>
       </section>
 
-      <section class="view" data-view="work" aria-labelledby="workTitle">
+      <section class="view" data-view="web" aria-labelledby="workTitle">
         <div class="view-title">
           <button type="button" data-view-target="home">Home</button>
           <div>
-            <p>Opportunita extra</p>
-            <h1 id="workTitle">Lavori</h1>
+            <p>Progetti, extra e manutenzioni</p>
+            <h1 id="workTitle">Lavori Web</h1>
           </div>
         </div>
 
@@ -168,16 +220,6 @@
         <section class="panel">
           <div id="projectList" class="list large-list"></div>
         </section>
-      </section>
-
-      <section class="view" data-view="recurring" aria-labelledby="recurringTitle">
-        <div class="view-title">
-          <button type="button" data-view-target="home">Home</button>
-          <div>
-            <p>Entrate mensili potenziali</p>
-            <h1 id="recurringTitle">Ricorrenti</h1>
-          </div>
-        </div>
 
         <article class="range-card recurring">
           <span>Manutenzione mensile</span>
@@ -192,9 +234,10 @@
 
       <nav class="bottom-nav" aria-label="Navigazione mobile">
         <button class="is-active" type="button" data-view-target="home">Home</button>
-        <button type="button" data-view-target="flow">Flusso</button>
-        <button type="button" data-view-target="work">Lavori</button>
-        <button type="button" data-view-target="recurring">Ric.</button>
+        <button type="button" data-view-target="income">Entrate</button>
+        <button type="button" data-view-target="outgoing">Uscite</button>
+        <button type="button" data-view-target="web">Web</button>
+        <button type="button" data-view-target="spese">Spese</button>
       </nav>
     </main>
 
