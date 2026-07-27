@@ -1,13 +1,13 @@
-const CACHE_NAME = "saldo-demo-v29";
+const CACHE_NAME = "saldo-demo-v30";
 const CORE_ASSETS = [
   "./",
   "index.html",
   "style.css",
   "script.js",
   "manifest.webmanifest",
-  "assets/apple-touch-icon.png",
-  "assets/icon-192.png",
-  "assets/icon-512.png"
+  "assets/apple-touch-icon.png?v=30",
+  "assets/icon-192.png?v=30",
+  "assets/icon-512.png?v=30"
 ];
 
 self.addEventListener("install", (event) => {
