@@ -1,16 +1,18 @@
 :root {
-  --bg: #000000;
-  --ink: #f7f5ff;
-  --muted: rgba(247, 245, 255, 0.58);
-  --panel: #000000;
-  --panel-soft: rgba(255, 255, 255, 0.045);
-  --line: rgba(255, 255, 255, 0.09);
-  --green: #63f58d;
-  --yellow: #fff36a;
-  --red: #ff766b;
-  --blue: #81baff;
-  --purple: #d5adff;
-  --shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+  --bg: #151311;
+  --surface: rgba(32, 30, 27, 0.78);
+  --surface-strong: rgba(43, 40, 36, 0.88);
+  --ink: #fffaf0;
+  --muted: rgba(255, 250, 240, 0.62);
+  --panel: rgba(31, 29, 26, 0.72);
+  --panel-soft: rgba(255, 244, 220, 0.075);
+  --line: rgba(255, 244, 220, 0.11);
+  --green: #72eba1;
+  --yellow: #ffe970;
+  --red: #ff8a7a;
+  --blue: #91c7ff;
+  --purple: #d9b8ff;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
 }
 
 * {
@@ -25,7 +27,10 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #000000;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(109, 76, 43, 0.2), transparent 30%),
+    radial-gradient(circle at 88% 4%, rgba(42, 83, 122, 0.18), transparent 34%),
+    linear-gradient(180deg, #181511 0%, #11100f 54%, #151311 100%);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
@@ -46,7 +51,7 @@ button {
   min-height: 100vh;
   margin: 0 auto;
   padding: 28px 34px 36px;
-  background: #000000;
+  background: transparent;
 }
 
 .app-nav {
@@ -62,7 +67,7 @@ button {
 .view-title button,
 .bottom-nav button {
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 250, 240, 0.075);
   color: var(--ink);
 }
 
@@ -77,7 +82,7 @@ button {
 }
 
 .brand-button.is-active {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 250, 240, 0.16);
 }
 
 .app-nav nav {
@@ -97,8 +102,8 @@ button {
 
 .app-nav nav button.is-active,
 .view-title button:hover {
-  background: #ffffff;
-  color: #060608;
+  background: #fff5df;
+  color: #15110d;
 }
 
 .view {
@@ -117,7 +122,9 @@ button {
   gap: 24px 32px;
   min-height: 318px;
   padding: 34px 0 6px;
-  background: #000000;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(226, 169, 91, 0.12), transparent 34%),
+    radial-gradient(circle at 94% 10%, rgba(95, 153, 219, 0.12), transparent 36%);
 }
 
 .board-top {
@@ -233,10 +240,10 @@ h2 {
 }
 
 .strip-card.net strong {
-  color: #ffffff;
+  color: #fffaf0;
   background:
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0 2px, transparent 2px 7px),
-    rgba(255, 255, 255, 0.1);
+    repeating-linear-gradient(90deg, rgba(255, 250, 240, 0.2) 0 2px, transparent 2px 7px),
+    rgba(255, 250, 240, 0.12);
 }
 
 .home-grid {
@@ -249,11 +256,13 @@ h2 {
 .panel,
 .side-panel,
 .range-card {
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--line);
   border-radius: 30px;
-  background: #000000;
-  box-shadow: none;
-  backdrop-filter: none;
+  background:
+    linear-gradient(145deg, rgba(255, 250, 240, 0.08), rgba(255, 250, 240, 0.025)),
+    var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
 }
 
 .panel {
@@ -325,12 +334,12 @@ h2 {
   align-content: space-between;
   min-height: 122px;
   padding: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(255, 244, 220, 0.1);
   border-radius: 24px;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
-    #000000;
-  box-shadow: none;
+    linear-gradient(145deg, rgba(255, 250, 240, 0.08), rgba(255, 250, 240, 0.02)),
+    rgba(22, 20, 18, 0.58);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
 }
 
 .item-meta {
@@ -376,7 +385,7 @@ h2 {
 }
 
 .list em {
-  color: #ffffff;
+  color: #fffaf0;
   font-style: normal;
   font-size: 15px;
   font-weight: 900;
@@ -469,7 +478,9 @@ h2 {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: #000000;
+  background:
+    linear-gradient(145deg, rgba(255, 250, 240, 0.07), rgba(255, 250, 240, 0.02)),
+    rgba(22, 20, 18, 0.62);
 }
 
 .pill-list .item-meta {
@@ -509,20 +520,20 @@ h2 {
 
 .range-card.recurring {
   background:
-    radial-gradient(circle at 88% 0%, rgba(99, 245, 141, 0.13), transparent 34%),
-    #000000;
+    radial-gradient(circle at 88% 0%, rgba(114, 235, 161, 0.16), transparent 36%),
+    var(--surface);
 }
 
 .income-range {
   background:
-    radial-gradient(circle at 90% 0%, rgba(99, 245, 141, 0.13), transparent 34%),
-    #000000;
+    radial-gradient(circle at 90% 0%, rgba(114, 235, 161, 0.16), transparent 36%),
+    var(--surface);
 }
 
 .outgoing-range {
   background:
-    radial-gradient(circle at 90% 0%, rgba(255, 118, 107, 0.13), transparent 34%),
-    #000000;
+    radial-gradient(circle at 90% 0%, rgba(255, 138, 122, 0.16), transparent 36%),
+    var(--surface);
 }
 
 .bottom-nav {
@@ -544,7 +555,7 @@ h2 {
     top: 0;
     z-index: 20;
     padding-bottom: 10px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.72), transparent);
+    background: linear-gradient(180deg, rgba(21, 19, 17, 0.96), rgba(21, 19, 17, 0.78), transparent);
     backdrop-filter: blur(18px);
   }
 
@@ -556,7 +567,9 @@ h2 {
     grid-template-columns: 1fr;
     min-height: 0;
     padding: 18px 0 4px;
-    background: #000000;
+    background:
+      radial-gradient(circle at 0% 4%, rgba(226, 169, 91, 0.12), transparent 42%),
+      radial-gradient(circle at 100% 0%, rgba(95, 153, 219, 0.12), transparent 44%);
   }
 
   .board-meta {
@@ -568,7 +581,7 @@ h2 {
   .board-meta article {
     padding: 10px;
     border-radius: 16px;
-    background: #000000;
+    background: rgba(255, 250, 240, 0.055);
   }
 
   .strip {
@@ -609,9 +622,9 @@ h2 {
     padding: 6px;
     border: 1px solid var(--line);
     border-radius: 24px;
-    background: #000000;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
-    backdrop-filter: none;
+    background: rgba(29, 27, 24, 0.88);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(18px);
     transform: translateX(-50%);
   }
 
@@ -623,8 +636,8 @@ h2 {
   }
 
   .bottom-nav button.is-active {
-    background: #ffffff;
-    color: #0b0b0e;
+    background: #fff5df;
+    color: #15110d;
   }
 }
 
