@@ -638,18 +638,39 @@ h2 {
 
 @media (max-width: 680px) {
   .app {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: max(10px, env(safe-area-inset-top)) 12px calc(88px + env(safe-area-inset-bottom));
   }
 
   .brand-button {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     font-size: 18px;
   }
 
+  .view.is-active {
+    gap: 14px;
+  }
+
+  .invoice-board {
+    min-height: 0;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 250, 240, 0.42)),
+      var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .board-top p,
+  .strip-card span,
+  .panel-head span,
+  .view-title p {
+    font-size: 12px;
+  }
+
   .amount-row strong {
-    font-size: clamp(54px, 17vw, 72px);
+    font-size: clamp(50px, 16vw, 66px);
   }
 
   .amount-row span,
@@ -665,11 +686,31 @@ h2 {
     font-size: 21px;
   }
 
+  .strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .strip-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .strip-card.net {
+    grid-column: 1 / -1;
+  }
+
   .panel,
   .side-panel {
     min-height: 0;
-    padding: 16px;
+    padding: 14px;
     border-radius: 24px;
+  }
+
+  .panel:not(.main-panel):not(.side-panel) {
+    background: rgba(255, 250, 240, 0.76);
   }
 
   .board-meta {
@@ -680,20 +721,63 @@ h2 {
     min-height: 40px;
     border-radius: 14px;
     font-size: 14px;
+    justify-content: flex-start;
+    padding: 0 14px;
   }
 
   .strip-card span {
     font-size: 12px;
   }
 
+  .home-grid {
+    gap: 18px;
+  }
+
   .card-grid .list-row {
-    min-height: 92px;
+    min-width: 74%;
+    min-height: 118px;
     padding: 14px;
   }
 
+  .list {
+    gap: 8px;
+  }
+
+  .list-row {
+    min-height: 66px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.48);
+  }
+
+  .list-row:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .card-grid,
+  .focus-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(245px, 82%);
+    grid-template-columns: none;
+    gap: 12px;
+    margin: 0 -12px;
+    padding: 0 12px 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .card-grid::-webkit-scrollbar,
+  .focus-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-grid .list-row,
   .focus-list article {
-    min-height: 92px;
-    padding: 14px;
+    scroll-snap-align: start;
   }
 
   .main-panel,
@@ -705,7 +789,7 @@ h2 {
   .main-panel .list,
   .large-list,
   .split .list {
-    max-height: calc(100svh - 290px);
+    max-height: none;
     overflow: auto;
     overscroll-behavior: contain;
   }
@@ -719,8 +803,8 @@ h2 {
   }
 
   .range-card {
-    min-height: 150px;
-    padding: 20px;
+    min-height: 128px;
+    padding: 18px;
     border-radius: 26px;
   }
 
@@ -742,6 +826,8 @@ h2 {
   .focus-list article {
     grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 10px;
+    min-height: 110px;
+    padding: 14px;
   }
 
   .focus-list article strong {
