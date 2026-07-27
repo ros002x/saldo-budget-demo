@@ -28,7 +28,7 @@ const budget = {
     { title: "BeerBQ", min: 700, max: 1200, icon: "burger" },
     { title: "Ristorante Al Viale", min: 700, max: 1200, icon: "utensils" },
     { title: "Tunnel 2.0", min: 900, max: 1500, icon: "burger" },
-    { title: "Studio Tattoo", min: 1500, max: 1500, icon: "tattoo" },
+    { title: "Respect Tattoo Art", min: 1500, max: 1500, icon: "tattoo" },
     { title: "Cinema", min: 1500, max: 2000, icon: "film" },
     { title: "Giuseppe", min: 4000, max: 4000, icon: "person" }
   ],
@@ -36,7 +36,7 @@ const budget = {
     { title: "BeerBQ", min: 50, max: 50, icon: "burger" },
     { title: "Al Viale", min: 50, max: 50, icon: "utensils" },
     { title: "Tunnel 2.0", min: 50, max: 50, icon: "burger" },
-    { title: "Tattoo", min: 50, max: 50, icon: "tattoo" },
+    { title: "Respect Tattoo Art", min: 50, max: 50, icon: "tattoo" },
     { title: "Cinema", min: 100, max: 150, icon: "film" }
   ]
 };
