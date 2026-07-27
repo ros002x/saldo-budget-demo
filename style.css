@@ -2,9 +2,9 @@
   --bg: #000000;
   --ink: #f7f5ff;
   --muted: rgba(247, 245, 255, 0.58);
-  --panel: rgba(36, 37, 47, 0.82);
-  --panel-soft: rgba(255, 255, 255, 0.07);
-  --line: rgba(255, 255, 255, 0.11);
+  --panel: #000000;
+  --panel-soft: rgba(255, 255, 255, 0.045);
+  --line: rgba(255, 255, 255, 0.09);
   --green: #63f58d;
   --yellow: #fff36a;
   --red: #ff766b;
@@ -117,9 +117,7 @@ button {
   gap: 24px 32px;
   min-height: 318px;
   padding: 34px 0 6px;
-  background:
-    radial-gradient(circle at 18% 8%, rgba(106, 25, 98, 0.28), transparent 30%),
-    radial-gradient(circle at 90% 10%, rgba(27, 93, 178, 0.32), transparent 34%);
+  background: #000000;
 }
 
 .board-top {
@@ -246,13 +244,11 @@ h2 {
 .panel,
 .side-panel,
 .range-card {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 30px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045)),
-    var(--panel);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(22px);
+  background: #000000;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .panel {
@@ -327,9 +323,9 @@ h2 {
   border: 1px solid rgba(255, 255, 255, 0.075);
   border-radius: 24px;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.045)),
-    rgba(255, 255, 255, 0.035);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    #000000;
+  box-shadow: none;
 }
 
 .item-meta {
@@ -435,7 +431,7 @@ h2 {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #000000;
 }
 
 .pill-list .item-meta {
@@ -471,20 +467,20 @@ h2 {
 
 .range-card.recurring {
   background:
-    radial-gradient(circle at 88% 0%, rgba(99, 245, 141, 0.18), transparent 38%),
-    var(--panel);
+    radial-gradient(circle at 88% 0%, rgba(99, 245, 141, 0.13), transparent 34%),
+    #000000;
 }
 
 .income-range {
   background:
-    radial-gradient(circle at 90% 0%, rgba(99, 245, 141, 0.18), transparent 38%),
-    var(--panel);
+    radial-gradient(circle at 90% 0%, rgba(99, 245, 141, 0.13), transparent 34%),
+    #000000;
 }
 
 .outgoing-range {
   background:
-    radial-gradient(circle at 90% 0%, rgba(255, 118, 107, 0.18), transparent 38%),
-    var(--panel);
+    radial-gradient(circle at 90% 0%, rgba(255, 118, 107, 0.13), transparent 34%),
+    #000000;
 }
 
 .bottom-nav {
@@ -518,9 +514,7 @@ h2 {
     grid-template-columns: 1fr;
     min-height: 0;
     padding: 18px 0 4px;
-    background:
-      radial-gradient(circle at 18% 4%, rgba(106, 25, 98, 0.22), transparent 34%),
-      radial-gradient(circle at 96% 0%, rgba(27, 93, 178, 0.24), transparent 38%);
+    background: #000000;
   }
 
   .board-meta {
@@ -532,7 +526,7 @@ h2 {
   .board-meta article {
     padding: 10px;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.06);
+    background: #000000;
   }
 
   .strip {
@@ -573,9 +567,9 @@ h2 {
     padding: 6px;
     border: 1px solid var(--line);
     border-radius: 24px;
-    background: rgba(24, 24, 34, 0.84);
-    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.36);
-    backdrop-filter: blur(22px);
+    background: #000000;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    backdrop-filter: none;
     transform: translateX(-50%);
   }
 
