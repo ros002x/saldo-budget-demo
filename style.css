@@ -21,6 +21,7 @@
 
 html {
   background: var(--bg);
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -30,6 +31,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 button,
@@ -54,7 +56,7 @@ button {
 .app-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   min-height: 54px;
   margin-bottom: 22px;
 }
@@ -639,6 +641,11 @@ h2 {
 @media (max-width: 680px) {
   .app {
     padding: max(10px, env(safe-area-inset-top)) 12px calc(88px + env(safe-area-inset-bottom));
+    overflow-x: clip;
+  }
+
+  .app-nav {
+    display: none;
   }
 
   .brand-button {
@@ -759,11 +766,13 @@ h2 {
   .focus-list {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(245px, 82%);
+    grid-auto-columns: minmax(232px, 82%);
     grid-template-columns: none;
     gap: 12px;
-    margin: 0 -12px;
-    padding: 0 12px 8px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 0 8px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
