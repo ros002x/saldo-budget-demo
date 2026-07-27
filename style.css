@@ -128,6 +128,22 @@ button {
   box-shadow: 0 24px 70px rgba(77, 62, 43, 0.2);
 }
 
+.invoice-board h1,
+.invoice-board strong,
+.invoice-board .amount-row strong {
+  color: #fffaf0;
+}
+
+.invoice-board p,
+.invoice-board .board-meta span,
+.invoice-board .strip-card span {
+  color: rgba(255, 250, 240, 0.68);
+}
+
+.invoice-board .board-meta strong {
+  color: rgba(255, 250, 240, 0.92);
+}
+
 .board-top {
   display: contents;
 }
